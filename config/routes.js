@@ -36,6 +36,17 @@ module.exports.routes = {
     view: 'homepage'
   },
 
+  'PUT /contact/': {
+   controller: 'ContactControllerController',
+   action : 'AddContact',
+  },
+
+  'GET /contact': {
+   controller: 'ContactControllerController',
+   action : 'GetAllContacts'
+  },
+
+  
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *

@@ -12,9 +12,13 @@ module.exports = {
   /**
    * `ContactControllerController.GetAllContacts()`
    */
-  GetAllContacts: function (req, res) {
+  GetAllContacts: function (res) {
+    
+    // var j =ContactDetails.find().exec(function (err){})
+    // console.log(JSON.stringify(j))
+    console.log( ContactDetails.count().exec(function (err){}))
     return res.json({
-      todo: 'GetAllContacts() is not implemented yet!'
+        JSON: ContactDetails.find().exec(function (err){})
     });
   },
 
@@ -23,9 +27,15 @@ module.exports = {
    * `ContactControllerController.AddContact()`
    */
   AddContact: function (req, res) {
-    return res.json({
-      todo: 'AddContact() is not implemented yet!'
-    });
+    console.log(req.param('name'))
+    console.log(req.param('phoneNumber'))
+  
+    ContactDetails.create({
+      name: req.param('name'),
+      phoneNumber: req.param('phoneNumber')
+    }).exec(function(name){});
+
+   return res.send('Inserted:'+req.param('name')+" "+req.param('phoneNumber'));
   }
 };
 
