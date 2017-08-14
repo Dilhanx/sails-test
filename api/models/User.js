@@ -6,9 +6,12 @@
  */
 
 module.exports = {
-
+  
   attributes: {
-
+    phoneNumber: {
+      type: 'string',
+      defaultsTo: '111-222-3333'
+    },
   }
 };
 
