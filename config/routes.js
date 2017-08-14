@@ -37,12 +37,12 @@ module.exports.routes = {
   },
 
   'PUT /contact/': {
-   controller: 'ContactControllerController',
+   controller: 'ContactController',
    action : 'AddContact',
   },
 
   'GET /contact': {
-   controller: 'ContactControllerController',
+   controller: 'ContactController',
    action : 'GetAllContacts'
   },
 
