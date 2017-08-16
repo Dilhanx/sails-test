@@ -14,13 +14,12 @@ module.exports = {
    */
   GetAllContacts: function (req,res) {
     
-    // var j =ContactDetails.find().exec(function (err){})
-    // console.log(JSON.stringify(j)) {"name":1,"phoneNumber":1,"_id":0}
-
-    ContactDetails.find({}).exec(function (err,records)
-    {
-
+    ContactService.GetAllContacts(function(err, records) {
+    if (!err) {
       return res.json(records);
+    }else{
+      return res.notFound();
+    }
     });
     
   },
@@ -30,17 +29,18 @@ module.exports = {
    * `ContactController.AddContact()`
    */
   AddContact: function (req, res) {
-    console.log(req.param('name'))
-    console.log(req.param('phoneNumber'))
-    
-    ContactDetails.create({
-      name: req.param('name'),
-      phoneNumber: req.param('phoneNumber')
-    }).exec(function(name){
-      return res.send('Inserted: '+req.param('name')+" "+req.param('phoneNumber'));
-    });
+
+
+    ContactService.AddContact({name: req.param('name'),phoneNumber:req.param('phoneNumber')},function(err,message) {
+    if (!err) {
+      return res.send(message);
+    }else{
+      return res.notFound();
+    }
+   });    
+
 
    
-  }
+ }
 };
 
