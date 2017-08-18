@@ -18,7 +18,7 @@ module.exports = {
     if (!err) {
       return res.json(records);
     }else{
-      return res.notFound();
+      return res.notFound(err);
     }
     });
     
@@ -30,15 +30,18 @@ module.exports = {
    */
   AddContact: function (req, res) {
 
-
-    ContactService.AddContact({name: req.param('name'),phoneNumber:req.param('phoneNumber')},function(err,message) {
-    if (!err) {
-      return res.send(message);
-    }else{
-      return res.notFound();
+    if(req.param('name')!= undefined && req.param('phoneNumber')!= undefined){
+        ContactService.AddContact({name: req.param('name'),phoneNumber:req.param('phoneNumber')},function(err,message) {
+          if (!err) {
+            return res.send(message);
+          }else{
+            return res.notFound();
+          }
+      });    
     }
-   });    
-
+    else{
+      return res.badRequest("Invalid Parameters");
+    }
 
    
  }

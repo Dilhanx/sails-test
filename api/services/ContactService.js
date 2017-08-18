@@ -2,11 +2,14 @@
 module.exports = {
 
     GetAllContacts: function (callback) {
-    
+        try{
         ContactDetails.find({}).exec(function (err,records) {   
             return callback(err,records); 
         });
-
+        }
+        catch(err){
+            return callback(err); 
+        }
     
     },
 
