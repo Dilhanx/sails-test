@@ -26,7 +26,6 @@ describe('ContactController', function() {
                     .expect( 400)
                     .end(function(err, res) {
                         if (err) throw err;
-                        console.log(body);
                         done();
                     });
         
