@@ -57,15 +57,15 @@ module.exports.connections = {
   *                                                                          *
   ***************************************************************************/
 
-  dev_phonebook: {
-    adapter: 'sails-mongo',
+  // dev_phonebook: {
+  //   adapter: 'sails-mongo',
     
-    host: 'localhost',
-    port: '27017',
-    // user: 'dilhanx', //optional
-    // password: '101Luminou$101', //optional
-    database: 'phone_book' //optional
-  },
+  //   host: 'localhost',
+  //   port: '27017',
+  //   // user: 'dilhanx', //optional
+  //   // password: '101Luminou$101', //optional
+  //   database: 'phone_book' //optional
+  // },
   pro_phonebook:{
      adapter: 'sails-mongo',
     
