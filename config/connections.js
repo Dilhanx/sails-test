@@ -60,7 +60,8 @@ module.exports.connections = {
   phonebook: {
     adapter: 'sails-mongo',
     
-    url: 'mongodb://dilhanx:101Luminou$101@cluster0-shard-00-00-vcx0e.mongodb.net:27017,cluster0-shard-00-01-vcx0e.mongodb.net:27017,cluster0-shard-00-02-vcx0e.mongodb.net:27017/phone_book?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin',
+    uri: 'mongodb://dilhanx:101Luminou$101@cluster0-shard-00-00-vcx0e.mongodb.net:27017,cluster0-shard-00-01-vcx0e.mongodb.net:27017,cluster0-shard-00-02-vcx0e.mongodb.net:27017/admin?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin',
+    // host: 'https://cloud.mongodb.com/v2/599121addf9db1260673fb78#clusters/detail/Cluster0',
     // port: '27017',
     // user: 'dilhanx', //optional
     // password: '101Luminou$101', //optional
