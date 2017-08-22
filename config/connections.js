@@ -28,10 +28,10 @@ module.exports.connections = {
   * Installed by default.                                                    *
   *                                                                          *
   ***************************************************************************/
-  // localDiskDb: {
-  //   adapter: 'sails-disk'
-  // },
-
+ localDiskDb: {
+    adapter: 'sails-disk'
+  },
+ 
   /***************************************************************************
   *                                                                          *
   * MySQL is the world's most popular relational database.                   *
@@ -59,8 +59,7 @@ module.exports.connections = {
   pro_phonebook:{
     adapter: 'sails-mongo',
   
-    //url: 'mongodb://dilhanx:101Luminou$101@cluster0-shard-00-00-vcx0e.mongodb.net:27017,cluster0-shard-00-01-vcx0e.mongodb.net:27017,cluster0-shard-00-02-vcx0e.mongodb.net:27017/admin?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin',
-    url: 'mongodb://dilhanx:101luminous101@ds036079.mlab.com:36079/phone_book'
+  url: 'mongodb://dilhanx:101luminous101@ds036079.mlab.com:36079/phone_book'
   },
   dev_phonebook: {
     adapter: 'sails-mongo',      
