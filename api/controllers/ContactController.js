@@ -42,7 +42,21 @@ module.exports = {
     else{
       return res.badRequest("Invalid Parameters");
     }
-
+  },
+  DeleteContact: function (req, res) {
+    
+    if(req.param('name')!= undefined && req.param('phoneNumber')!= undefined){
+        ContactService.DeleteContact({name: req.param('name'),phoneNumber:req.param('phoneNumber')},function(err,message) {
+          if (!err) {
+            return res.send(message);
+          }else{
+            return res.notFound();
+          }
+      });    
+    }
+    else{
+      return res.badRequest("Invalid Parameters");
+    }
    
  }
 };

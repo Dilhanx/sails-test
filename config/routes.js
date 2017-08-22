@@ -40,6 +40,10 @@ module.exports.routes = {
    controller: 'ContactController',
    action : 'AddContact',
   },
+  'DELETE /contact/': {
+    controller: 'ContactController',
+    action : 'DeleteContact',
+   },
 
   'GET /contact': {
    controller: 'ContactController',

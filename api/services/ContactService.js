@@ -12,7 +12,7 @@ module.exports = {
         }
     
     },
-
+    
     AddContact: function (details, callback) {
         ContactDetails.create({
         name: details.name,
@@ -20,7 +20,17 @@ module.exports = {
         }).exec(function(err,details){
         return callback(err,'Inserted: '+details.name+" "+details.phoneNumber); 
         });
-
+            
+    
+    },
+    DeleteContact: function (details, callback) {
+        ContactDetails.destroy({
+        name: details.name,
+        phoneNumber: details.phoneNumber
+        }).exec(function(err,details){
+        return callback(err,'Deleted'); 
+        });
+            
     
     }
 }
